@@ -18,8 +18,10 @@ public class MyClass {
         //areaOfCircle();
 
         //Convert decimal to binary
-        decimalToBinary();
+        //decimalToBinary();
 
+        //find different types from a string
+        findFromString();
     }
 
     public static void simpleArithematic(){
@@ -50,5 +52,26 @@ public class MyClass {
         for(int i =bi.size()-1;i>=0;i--){
             System.out.print(bi.get(i));
         }
+    }
+
+    public static void findFromString(){
+        System.out.println("Enter a String:");
+
+        String line = scn.nextLine();
+        char[] arr = line.toCharArray();
+        int letter=0, digit =0, space = 0,other =0;
+        for(int i=0;i<arr.length;i++){
+
+            if(Character.isLetter( arr[i])){
+                letter++;
+            }else if(Character.isDigit(arr[i])){
+                digit++;
+            }else if(Character.isSpaceChar(arr[i])){
+                space++;
+            }else{
+                other++;
+            }
+        }
+        System.out.println("Letters : "+letter +"\nDigits : "+digit +"\nSpaces : "+space + "\nOthers : "+other);
     }
 }
